@@ -40,6 +40,11 @@ button:hover {
     margin-top: 0;
     font-weight: 400;
     font-size: 14px;
+    height: 20px;
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .locations {
     height: 100%;
@@ -72,6 +77,10 @@ button:hover {
     padding: 10px 0;
     margin-left: -5px;
     margin-top: 0%;
+}
+
+.amenities .popover ul li input {
+    margin: 0 10px;
 }
 
 .amenities .popover ul{
