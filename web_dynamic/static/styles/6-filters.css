@@ -79,6 +79,10 @@ button:hover {
     margin-top: 0%;
 }
 
+.state_input, .city_input {
+    margin-right: 10px;
+}
+
 .amenities .popover ul li input {
     margin: 0 10px;
 }
