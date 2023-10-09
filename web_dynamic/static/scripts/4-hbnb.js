@@ -1,5 +1,9 @@
-$(document).ready(function() {
-    const amenityObj = {};
+$(document).ready(init);
+const amenityObj = {};
+const HOST = '0.0.0.0:5001';
+
+function init () { 
+    
     $('li input[type=checkbox]').change(function () {
 	if (this.checked) {
 	    amenityObj[this.dataset.name]= this.dataset.id;
@@ -9,7 +13,7 @@ $(document).ready(function() {
 	$('.amenities h4').text(Object.keys(amenityObj).sort().join(", "));
     });
     
-    $.get('http://0.0.0.0:5001/api/v1/status/', (data, textStatus) => {
+    $.get(`http://${HOST}/api/v1/status/`, (data, textStatus) => {
 	if (textStatus === 'success' && data.status === 'OK') {
 	    $('#api_status').addClass('available');
 	} else {
@@ -18,11 +22,11 @@ $(document).ready(function() {
     });
 
     getPlacesAmen();
-});
+}
 
 
 function getPlacesAmen () {
-    const url = `http://0.0.0.0:5001/api/v1/places_search/`;
+    const url = `http://${HOST}/api/v1/places_search/`;
     $.ajax({
 	url: url,
 	type: 'POST',
